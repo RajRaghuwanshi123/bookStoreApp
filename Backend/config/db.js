@@ -3,9 +3,12 @@ import dotenv from "dotenv";
 dotenv.config();
 console.log(process.env.MongoDBURI, "hkjgh");
 const connectDB = async () => {
+  console.log("entered");
+
   try {
     const conn = await mongoose.connect(process.env.MongoDBURI, {
       useNewUrlParser: true,
+
       //   userUnifiedTopology: true,
     });
     console.log("mongoDB connection: ${conn.connection.host}");
